@@ -1,3 +1,4 @@
+/*
 INSERT INTO managers (complete_name)
 VALUES
 ('Andrew Cashman'),
@@ -28,3 +29,4 @@ INSERT INTO evaluations (employee_id, attendance, work_quality, productivity, co
 (8, 3, 4, 4, 5, 5),
 (9, 3, 4, 4, 5, 5),
 (10, 3, 3, 4, 2, 3);
+*/
