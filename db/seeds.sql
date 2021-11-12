@@ -17,7 +17,7 @@ VALUES
 ('Thomas', 'Chamberlin', 2, 4, 'Human Resources', 80000),
 ('Christian', 'McCaffery', 3, 3 'CEO/COO', 400000);
 
-INSERT INTO evalutions (employe_id, attence, work_quality, productivity, communication, job_knowledge) VALUES
+INSERT INTO evalutions (employee_id, attendance, work_quality, productivity, communication, job_knowledge) VALUES
 (1, 3, 3, 4, 2, 3),
 (2, 2, 3, 4, 4, 3),
 (3, 3, 3, 4, 5, 2),
