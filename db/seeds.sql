@@ -15,6 +15,8 @@ VALUES
 ('Robert', 'Eli', 1, 4, 'Vice President', 200000 ),
 ('Sarah', 'Peterson', 4, 2, 'President', 250000),
 ('Thomas', 'Chamberlin', 2, 4, 'Human Resources', 80000),
+('James', 'Bonder', 4, 2, 'President', 250000),
+('Jack', 'Hoffer', 2, 4, 'Human Resources', 80000),
 ('Christian', 'McCaffery', 3, 3 'CEO/COO', 400000);
 
 INSERT INTO evalutions (employee_id, attendance, work_quality, productivity, communication, job_knowledge) VALUES
