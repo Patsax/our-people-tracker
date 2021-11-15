@@ -1,0 +1,27 @@
+<section>
+    <h4>Create New Department</h4>
+
+    <form class="new-department-form">
+        <div>
+            <label for="department">Department Name</label>
+            <input type="text" id="dept-name" name="dept-name">
+        </div>
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+
+{{#if departments.length}}
+<section>
+    <h2>All Departments</h2>
+    <ol>
+        {{#each departments as |department|}}
+        <li>
+            {{> department-info department}}
+            <a href="/homepage/edit/{{department.id}}" class="">Edit department</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-department.js"></script>
