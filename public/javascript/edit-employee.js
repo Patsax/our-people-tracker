@@ -4,6 +4,7 @@ async function editFormHandler(event) {
     const firstName = document.querySelector('input[name="first-name"]').value.trim();
     const lastName = document.querySelector('input[name="last-name"]').value.trim();
     const role = document.querySelector('input[name="role"]').value.trim();
+    const salary = document.querySelector('input[name="current-salary"]').value.trim();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -12,7 +13,8 @@ async function editFormHandler(event) {
         body: JSON.stringify({
             firstName,
             lastName,
-            role
+            role,
+            salary
         }),
         headers: {
             'Content-Type': 'application/json'
