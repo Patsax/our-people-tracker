@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: lightslategray;
+  font-weight: bold;
+  transition: color .1s;
+}
+
+a:hover {
+  color: #3486eb;
+}
+
+header {
+  text-align: center;
+  color: white;
+  background-color: lightslategray;
+  padding: 1px 0;
+  height: 10%;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  background-color: lightslategray;
+  padding: 1%;
+  font-size: 110%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
