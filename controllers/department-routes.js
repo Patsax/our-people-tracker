@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Department, Role, Employee } = require('../models');
 
-router.get('/departments', (req, res) => {
+router.get('/department', (req, res) => {
     Department.findall({
         attributes: [
             'id',

@@ -1,3 +1,16 @@
+const Roles = require('./employee');
+const Employee = require('./employee');
+const Department = require('./employee');
+
+Roles.belongsTo(Employee);
+
+Employee.hasMany(Roles);
+
+Department.hasMany(Employee);
+
+module.exports = { Roles, Employee, Department };
+
+/*
 'use strict';
 
 const fs = require('fs');
@@ -35,3 +48,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+*/
