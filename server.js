@@ -1,5 +1,5 @@
 const path = require('path');
-
+const routes = require('./controllers')
 // Dependencies
 // =============================================================
 
@@ -37,8 +37,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const apiRoutes = require("./controllers/api/employee-api");
-app.use(require('./controllers/'));
+
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => 

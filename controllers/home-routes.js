@@ -6,9 +6,9 @@ router.get('/', (req, res) => {
     res.render('homepage', {});
 });
 
-// router.get('/departments', (req, res) => {
-//     res.render('/deparments', {});
-// });
+router.get('/department', (req, res) => {
+    res.render('/deparments', {});
+});
 
 // router.get('/roles', (req, res) => {
 //     res.render('/roles', {});

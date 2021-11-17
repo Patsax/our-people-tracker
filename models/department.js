@@ -5,6 +5,12 @@ class Department extends Model { }
 
 Department.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         department_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,7 +20,10 @@ Department.init(
         },
     },
     {
-        sequelize
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'department'
     }
 );
 
