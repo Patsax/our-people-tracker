@@ -1,13 +1,16 @@
 const path = require('path');
+
+// Dependencies
+// =============================================================
+
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 const exphbs = require('express-handlebars');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require('./models');
 
-const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // const sess = {
@@ -20,7 +23,7 @@ const sequelize = require('./config/connection');
 //     })
 // };
 
-// app.use(session(sess));
+app.use(session(sess));
 
 // const helpers = require('./utils/helpers');
 
@@ -33,7 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const apiRoutes = require("./controllers/api/apiRoutes");
+const apiRoutes = require("./controllers/api/employee-api");
 app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
@@ -41,8 +44,6 @@ sequelize.sync({ force: false }).then(() => {
         console.log(`listening on: http://localhost:${PORT}`)
     );
 });
-
-
 
 /*
 // originally was set to false ------------------------

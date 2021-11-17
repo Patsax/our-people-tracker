@@ -1,4 +1,3 @@
-/*
 INSERT INTO department (id, name)
 VALUES 
     (1, 'Sales'),
@@ -34,8 +33,7 @@ VALUES
     (14, 'Albert', 'Wesker', 7, 12),
     (15, 'Misha', 'Yovovich', 7, 12);
 
-
-
+/*
 INSERT INTO managers (complete_name)
 VALUES
 ('Andrew Cashman'),
