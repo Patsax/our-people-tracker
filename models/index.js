@@ -1,19 +1,14 @@
 const Roles = require('./employee');
 const Employee = require('./employee');
-const Department = require('./department');
+const Department = require('./employee');
 
 Roles.belongsTo(Employee);
 
 Employee.hasMany(Roles);
 
-Department.hasMany(Employees);
+Department.hasMany(Employee);
 
 module.exports = { Roles, Employee, Department };
-
-
-
-
-
 
 /*
 'use strict';

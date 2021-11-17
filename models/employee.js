@@ -12,17 +12,35 @@ Employee.init(
                 len: [1, 160]
             }
         },
-        body: {
+        first_name: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        category: {
-            type: DataTypes.STRING,
-            defaultValue: 'Personal'
-        }
+        last_name: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        role_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        salary: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        
     },
     {
         sequelize

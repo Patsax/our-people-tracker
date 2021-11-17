@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    db.Post.findOne({
+    db.Roles.findOne({
         where: {
             id: req.params.id
         },

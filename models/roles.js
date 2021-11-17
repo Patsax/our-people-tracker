@@ -12,15 +12,15 @@ Roles.init(
                 len: [1, 160]
             }
         },
-        body: {
-            type: DataTypes.TEXT,
+        salary: {
+            type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        category: {
-            type: DataTypes.STRING,
+        department_id: {
+            type: DataTypes.INTEGER,
             defaultValue: 'Personal'
         }
     },
