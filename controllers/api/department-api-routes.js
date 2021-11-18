@@ -1,21 +1,21 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-// const { Department, Role, Employee } = require('../../models');
+const { Department, Role, Employee } = require('../../models');
 
 // Routes
 // =============================================================
 
 router.get('/', (req, res) => {
-    const query = {};
-    if (req.query.employee_id) {
-        query.EmployeeId = req.query.employee_id;
-    }
 
-    db.Department.findAll({
-        include: [db.Department],
-        where: query
-    }).then(dbDepartment => {
-        res.json(dbDepartment);
+    // const query = {};
+    // if (req.query.employee_id) {
+    //     query.EmployeeId = req.query.employee_id;
+    //     console.log()
+    // }
+
+    Department.findAll({})
+    .then(dbDepartment => {
+        console.log("FIND ALL DEPARTMENTS",dbDepartment)
+
     })
     .catch((err) => {
         console.log(err);
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    db.Department.findOne({
+    Department.findOne({
         where: {
             id: req.params.id
         },
@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log(req.body);
-    db.Department.create(req.body).then(dbDepartment => {
+    Department.create(req.body).then(dbDepartment => {
         res.json(dbDepartment);
     })
     .catch((err) => {
@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    db.Department.destroy({
+    Department.destroy({
         where: {
             id: req.params.id
         }
@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-    db.Department.update(req.body, {
+    Department.update(req.body, {
         where: {
             id: req.body.id
         }
