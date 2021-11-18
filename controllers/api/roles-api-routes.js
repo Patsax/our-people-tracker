@@ -15,6 +15,10 @@ router.get('/', (req, res) => {
         where: query
     }).then(dbRoles => {
         res.json(dbRoles);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -26,6 +30,10 @@ router.get('/:id', (req, res) => {
         include: [db.Roles]
     }).then(dbRoles => {
         res.json(dbRoles);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -33,6 +41,9 @@ router.post('/', (req, res) => {
     console.log(req.body);
     db.Roles.create(req.body).then(dbRoles => {
         res.json(dbRoles);
+    })
+    .catch((err) => {
+        res.status(500).json(err);
     });
 });
 
@@ -43,6 +54,10 @@ router.delete('/:id', (req, res) => {
         }
     }).then(dbRoles => {
         res.json(dbRoles);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 

@@ -10,11 +10,15 @@ router.get('/', (req, res) => {
         query.EmployeeId = req.query.employee_id;
     }
 
-    db.Roles.findAll({
-        include: [db.Roles],
+    db.Employee.findAll({
+        include: [db.Employee],
         where: query
     }).then(dbEmployee => {
         res.json(dbEmployee);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -26,6 +30,10 @@ router.get('/:id', (req, res) => {
         include: [db.Employee]
     }).then(dbEmployee => {
         res.json(dbEmployee);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -33,6 +41,10 @@ router.post('/', (req, res) => {
     console.log(req.body);
     db.Employee.create(req.body).then(dbRoles => {
         res.json(dbEmployee);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
@@ -43,6 +55,10 @@ router.delete('/:id', (req, res) => {
         }
     }).then(dbEmployee => {
         res.json(dbEmployee);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
