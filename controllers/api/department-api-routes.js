@@ -5,7 +5,7 @@ const { Department, Role, Employee } = require('../../models');
 // Routes
 // =============================================================
 
-router.get('/', (req, res) => {
+router.get('/department', (req, res) => {
     const query = {};
     if (req.query.employee_id) {
         query.EmployeeId = req.query.employee_id;
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/department/:id', (req, res) => {
     db.Department.findOne({
         where: {
             id: req.params.id
@@ -30,14 +30,14 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/department', (req, res) => {
     console.log(req.body);
     db.Department.create(req.body).then(dbDepartment => {
         res.json(dbDepartment);
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/department/:id', (req, res) => {
     db.Department.destroy({
         where: {
             id: req.params.id
