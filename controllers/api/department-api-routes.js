@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Department, Role, Employee } = require('../../models');
+// const { Department, Role, Employee } = require('../../models');
 
 // Routes
 // =============================================================
 
-router.get('/department', (req, res) => {
+router.get('/', (req, res) => {
     const query = {};
     if (req.query.employee_id) {
         query.EmployeeId = req.query.employee_id;
@@ -16,10 +16,14 @@ router.get('/department', (req, res) => {
         where: query
     }).then(dbDepartment => {
         res.json(dbDepartment);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
-router.get('/department/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     db.Department.findOne({
         where: {
             id: req.params.id
@@ -30,20 +34,28 @@ router.get('/department/:id', (req, res) => {
     });
 });
 
-router.post('/department', (req, res) => {
+router.post('/', (req, res) => {
     console.log(req.body);
     db.Department.create(req.body).then(dbDepartment => {
         res.json(dbDepartment);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
-router.delete('/department/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     db.Department.destroy({
         where: {
             id: req.params.id
         }
     }).then(dbDepartment => {
         res.json(dbDepartment);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
