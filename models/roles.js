@@ -5,6 +5,12 @@ class Roles extends Model { }
 
 Roles.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -21,11 +27,15 @@ Roles.init(
         },
         department_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             defaultValue: 'Personal'
         }
     },
     {
-        sequelize
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'role'
     }
 );
 
