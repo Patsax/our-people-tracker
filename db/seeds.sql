@@ -1,12 +1,12 @@
 
-INSERT INTO department (id, name)
+INSERT INTO department (id, department_name)
 VALUES 
     (1, 'Sales'),
     (2, 'Engineering'),
     (3, 'Finance'),
     (4, 'Legal');
 
-INSERT INTO role (id, title, salary, department_id) 
+INSERT INTO roles (id, title, salary, department_id) 
 VALUES 
     (1, 'Sales Lead', 100000, 1),
     (2, 'Sales Person', 80000, 1),
@@ -16,23 +16,22 @@ VALUES
     (6, 'Head of Legal', 250000, 4),
     (7, 'Lawyer', 190000, 4);
 
-INSERT INTO employee (id, first_name, last_name, role_id,)
+INSERT INTO employee (id, first_name, last_name, hired, salary, role_id)
 VALUES
-    (1, 'Rick', 'Pick', 1, NULL),
-    (2, 'Zoey', 'Nelson', 2, 1),
-    (3, 'Morty', 'Henderson', 2, 1),
-    (4, 'Richard', 'Rahl', 2, 1),
-    (5, 'Kahlan', 'Amnell', 3, NULL),
-    (6, 'Cara', 'Doon', 4, 5),
-    (7, 'Felix', 'Felder', 4, 5),
-    (8, 'Jaina', 'Neidmeier', 5, NULL),
-    (9, 'Landon', 'Meier', 5, NULL),
-    (10, 'Cora', 'Namor', 5, NULL),
-    (11, 'Kimberly', 'Feldon',5, NULL),
-    (12, 'Gemma', 'Simmons', 6, NULL),
-    (13, 'Rebecca', 'Meier', 7, 12),
-    (14, 'Albert', 'Wesker', 7, 12),
-    (15, 'Misha', 'Yovovich', 7, 12);
+    (1, 'Rick', 'Pick', 01/23/4567, 100000, 1),
+    (2, 'Zoey', 'Nelson', 01/23/4567, 80000, 2),
+    (3, 'Morty', 'Henderson', 01/23/4567, 80000, 2),
+    (4, 'Richard', 'Rahl', 01/23/4567, 80000, 2),
+    (5, 'Kahlan', 'Amnell', 01/23/4567, 150000, 3),
+    (6, 'Cara', 'Doon', 01/23/4567, 120000, 4),
+    (7, 'Felix', 'Felder', 01/23/4567, 120000, 4),
+    (8, 'Jaina', 'Neidmeier', 01/23/4567, 125000, 5),
+    (10, 'Cora', 'Namor', 01/23/4567, 125000, 5),
+    (11, 'Kimberly', 'Feldon', 01/23/4567, 125000, 5),
+    (12, 'Gemma', 'Simmons', 01/23/4567, 250000, 6),
+    (13, 'Rebecca', 'Meier', 01/23/4567, 190000, 7),
+    (14, 'Albert', 'Wesker', 01/23/4567, 190000, 7),
+    (15, 'Misha', 'Yovovich', 01/23/4567, 190000, 7);
 
 -- INSERT INTO managers (complete_name)
 -- VALUES

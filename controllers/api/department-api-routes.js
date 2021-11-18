@@ -6,10 +6,10 @@ const sequelize = require('../../config/connection');
 // =============================================================
 
 router.get('/', (req, res) => {
-    const query = {};
-    if (req.query.employee_id) {
-        query.EmployeeId = req.query.employee_id;
-    }
+    // const query = {};
+    // if (req.query.employee_id) {
+    //     query.EmployeeId = req.query.employee_id;
+    // }
 
     db.Department.findAll({
         include: [db.Department],
