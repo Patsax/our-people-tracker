@@ -20,7 +20,7 @@ router.get('/api/department/:id', (req, res) => {
 });
 
 //TODO: Create a department
-router.post('api/category', (req, res) => {
+router.post('api/department', (req, res) => {
     Department.create({
         department_name: req.body.department_name
     }).then(Department => {
@@ -29,7 +29,28 @@ router.post('api/category', (req, res) => {
 });
 
 //TODO: Update a department
+router.put('api/department/:id', (req, res)=> {
+    Department.update({
+        department_name: req.body.department_name
+    },
+        {
+            where: {
+                id: req.params.id
+            }
+        }).then(Department => {
+            res.json(Department);
+        });
+});
 
 //TODO: Delet a department
+router.delete('api/department/:id', (req, res)=> {
+    Department.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(Department => {
+        res.json(Department);
+    });
+});
 
 module.exports = router;
