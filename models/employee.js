@@ -5,12 +5,11 @@ class Employee extends Model { }
 
 Employee.init(
     {
-        title: {
-            type: DataTypes.STRING,
+        id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-            validate: {
-                len: [1, 160]
-            }
+            primaryKey: true,
+            autoIncrement: true
         },
         first_name: {
             type: DataTypes.TEXT,
@@ -33,6 +32,13 @@ Employee.init(
                 len: [1]
             }
         },
+        hired: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
         salary: {
             type: DataTypes.DECIMAL,
             allowNull: false,
@@ -43,7 +49,10 @@ Employee.init(
         
     },
     {
-        sequelize
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'department'
     }
 );
 
