@@ -1,25 +1,25 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Department, Role, Employee } = require('../../models');
+const { Department } = require('../../models');
 
 // Routes
 // =============================================================
 
-router.get('/department', (req, res) => {
-    const query = {};
+
+router.get('/', (req, res) => {
+    /*const query = {};
     if (req.query.employee_id) {
         query.EmployeeId = req.query.employee_id;
-    }
-
-    db.Department.findAll({
-        include: [db.Department],
-        where: query
-    }).then(dbDepartment => {
-        res.json(dbDepartment);
-    });
+    }*/
+    console.log('route match');
+    Department.findAll({})
+        .then((response) => res.json(response))
+        .then((data) => res.send(data))
+        .catch(err => console.log(err));
+ 
 });
 
-router.get('/department/:id', (req, res) => {
+/*router.get('/:id', (req, res) => {
     db.Department.findOne({
         where: {
             id: req.params.id
@@ -55,6 +55,6 @@ router.put('/', (req, res) => {
     }).then(dbDepartment => {
         res.json(dbDepartment);
     });
-});
+});*/
 
 module.exports = router;

@@ -1,7 +1,16 @@
-async function departmentBtnHandler() {
-    await fetch('/departments', {
-        method: 'GET'
-    });
+function departmentBtnHandler() {
+    console.log('were are here');
+
+    fetch('/api/department')
+        .then(response => response.json())
+        .then(data => {
+            console.log('data; ', data);
+        })
+
 }
 
-document.querySelector('#dept-btn').addEventListener('click', departmentBtnHandler());
+document.querySelector('#dept-btn')
+    .addEventListener('click', () => {
+        console.log('clicked');
+        departmentBtnHandler();
+    });
