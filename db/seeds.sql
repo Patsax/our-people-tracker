@@ -1,21 +1,13 @@
 
-<<<<<<< HEAD
-INSERT INTO department (id, department_name)
-=======
 INSERT INTO department 
     (department_name)
->>>>>>> ff09124b5fd57a1a5f1e479fc3cc07924046aa98
 VALUES 
     ('Sales'),
     ('Engineering'),
     ('Finance'),
     ('Legal');
 
-<<<<<<< HEAD
-INSERT INTO roles (id, title, salary, department_id) 
-=======
 INSERT INTO roles (title, salary, department_id) 
->>>>>>> ff09124b5fd57a1a5f1e479fc3cc07924046aa98
 VALUES 
     ('Sales Lead', 100000, 1),
     ('Sales Person', 80000, 1),
@@ -25,24 +17,6 @@ VALUES
     ('Head of Legal', 250000, 4),
     ('Lawyer', 190000, 4);
 
-<<<<<<< HEAD
-INSERT INTO employee (id, first_name, last_name, hired, salary, role_id)
-VALUES
-    (1, 'Rick', 'Pick', 01/23/4567, 100000, 1),
-    (2, 'Zoey', 'Nelson', 01/23/4567, 80000, 2),
-    (3, 'Morty', 'Henderson', 01/23/4567, 80000, 2),
-    (4, 'Richard', 'Rahl', 01/23/4567, 80000, 2),
-    (5, 'Kahlan', 'Amnell', 01/23/4567, 150000, 3),
-    (6, 'Cara', 'Doon', 01/23/4567, 120000, 4),
-    (7, 'Felix', 'Felder', 01/23/4567, 120000, 4),
-    (8, 'Jaina', 'Neidmeier', 01/23/4567, 125000, 5),
-    (10, 'Cora', 'Namor', 01/23/4567, 125000, 5),
-    (11, 'Kimberly', 'Feldon', 01/23/4567, 125000, 5),
-    (12, 'Gemma', 'Simmons', 01/23/4567, 250000, 6),
-    (13, 'Rebecca', 'Meier', 01/23/4567, 190000, 7),
-    (14, 'Albert', 'Wesker', 01/23/4567, 190000, 7),
-    (15, 'Misha', 'Yovovich', 01/23/4567, 190000, 7);
-=======
 INSERT INTO employee 
     (first_name, last_name, role_id)
 VALUES
@@ -61,7 +35,6 @@ VALUES
     ('Rebecca', 'Meier', 7),
     ('Albert', 'Wesker', 7),
     ('Misha', 'Yovovich', 7);
->>>>>>> ff09124b5fd57a1a5f1e479fc3cc07924046aa98
 
 -- INSERT INTO managers (complete_name)
 -- VALUES
