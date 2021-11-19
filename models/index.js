@@ -1,4 +1,4 @@
-const Roles = require('./employee');
+const Roles = require('./roles');
 const Employee = require('./employee');
 const Department = require('./department');
 

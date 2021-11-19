@@ -28,7 +28,7 @@ Roles.init(
         department_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            defaultValue: 'Personal'
+        //    defaultValue: 'Personal'
         }
     },
     {

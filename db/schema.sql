@@ -22,5 +22,7 @@ CREATE TABLE employee
                         first_name VARCHAR(30) NOT NULL,
                         last_name VARCHAR(30) NOT NULL,
                         role_id INTEGER,
+                        hired DATE NOT NULL,
+                        salary DECIMAL NOT NULL, 
                         CONSTRAINT fk_role FOREIGN KEY(role_id) REFERENCES roles(id) ON DELETE CASCADE
                     );
