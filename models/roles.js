@@ -28,14 +28,14 @@ Roles.init(
         department_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            defaultValue: 'Personal'
+        //    defaultValue: 'Personal'
         }
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'department'
+        modelName: 'role'
     }
 );
 

@@ -1,20 +1,14 @@
 const router = require('express').Router();
-const db = require("../../models");
+const { Department, Role, Employee } = require('../../models');
 
 // Routes
 // =============================================================
 
 router.get('/', (req, res) => {
-    const query = {};
-    if (req.query.employee_id) {
-        query.EmployeeId = req.query.employee_id;
-    }
+    Employee.findAll({})
+    .then(dbEmployee => {
+        console.log("FIND ALL Employees",dbEmployee)
 
-    db.Employee.findAll({
-        include: [db.Employee],
-        where: query
-    }).then(dbEmployee => {
-        res.json(dbEmployee);
     })
     .catch((err) => {
         console.log(err);
@@ -23,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    db.Employee.findOne({
+    Employee.findOne({
         where: {
             id: req.params.id
         },
@@ -31,15 +25,11 @@ router.get('/:id', (req, res) => {
     }).then(dbEmployee => {
         res.json(dbEmployee);
     })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
 });
 
 router.post('/', (req, res) => {
     console.log(req.body);
-    db.Employee.create(req.body).then(dbRoles => {
+    Employee.create(req.body).then(dbEmployee => {
         res.json(dbEmployee);
     })
     .catch((err) => {
@@ -49,7 +39,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    db.Employee.destroy({
+    Employee.destroy({
         where: {
             id: req.params.id
         }
@@ -63,7 +53,7 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-    db.Employee.update(req.body, {
+    Employee.update(req.body, {
         where: {
             id: req.body.id
         }

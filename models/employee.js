@@ -32,13 +32,27 @@ Employee.init(
                 len: [1]
             }
         },
+        hired: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        salary: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
         
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'department'
+        modelName: 'employee'
     }
 );
 

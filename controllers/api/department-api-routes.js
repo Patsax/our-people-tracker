@@ -5,13 +5,6 @@ const { Department, Role, Employee } = require('../../models');
 // =============================================================
 
 router.get('/', (req, res) => {
-
-    // const query = {};
-    // if (req.query.employee_id) {
-    //     query.EmployeeId = req.query.employee_id;
-    //     console.log()
-    // }
-
     Department.findAll({})
     .then(dbDepartment => {
         console.log("FIND ALL DEPARTMENTS",dbDepartment)
