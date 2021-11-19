@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
+const {Model, DataTypes, INTEGER } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Department extends Model { }
+class Department extends Model{}
 
 Department.init(
     {
@@ -11,16 +11,14 @@ Department.init(
             primaryKey: true,
             autoIncrement: true
         },
-        department_name: {
+        department_name:{
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 160]
-            }
-        },
+            allowNull: false
+        }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'department'
