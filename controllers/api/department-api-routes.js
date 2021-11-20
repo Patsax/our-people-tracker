@@ -1,21 +1,14 @@
 const router = require('express').Router();
-const { Department, Role, Employee } = require('../../models');
-
-// Routes
-// =============================================================
+const { Department } = require('../../models');
 
 router.get('/', (req, res) => {
 
-    // const query = {};
-    // if (req.query.employee_id) {
-    //     query.EmployeeId = req.query.employee_id;
-    //     console.log()
-    // }
-
     Department.findAll({})
-    .then(dbDepartment => {
-        console.log("FIND ALL DEPARTMENTS",dbDepartment)
-
+    .then(departmentData => {
+        if (!departmentData) {
+            res.status(404).json({ message: 'Could not find departments' })
+        }
+        res.json(departmentData)
     })
     .catch((err) => {
         console.log(err);
@@ -24,24 +17,33 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+
     Department.findOne({
         where: {
             id: req.params.id
-        },
-        include: [db.Department]
-    }).then(dbDepartment => {
-        res.json(dbDepartment);
-    });
-});
-
-router.post('/', (req, res) => {
-    console.log(req.body);
-    Department.create(req.body).then(dbDepartment => {
-        res.json(dbDepartment);
+        }
+    })
+    .then(departmentData => {
+        if (!departmentData) {
+            res.status(404).json({ message: 'No department with that id' });
+            return;
+        }
+        res.json(departmentData);
     })
     .catch((err) => {
         console.log(err);
         res.status(500).json(err);
+    });
+});
+
+router.post('/', (req, res) => {
+    Department.create({
+        department_name: req.body.department_name
+    })
+    .then(departmentData => res.json(departmentData))
+    .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
     });
 });
 
@@ -50,22 +52,16 @@ router.delete('/:id', (req, res) => {
         where: {
             id: req.params.id
         }
-    }).then(dbDepartment => {
-        res.json(dbDepartment);
+    }).then(departmentData => {
+        if  (!departmentData) {
+            res.status(404).json({ message: 'No department with that id' })
+            return;
+        }
+        res.json(departmentData);
     })
     .catch((err) => {
         console.log(err);
         res.status(500).json(err);
-    });
-});
-
-router.put('/', (req, res) => {
-    Department.update(req.body, {
-        where: {
-            id: req.body.id
-        }
-    }).then(dbDepartment => {
-        res.json(dbDepartment);
     });
 });
 

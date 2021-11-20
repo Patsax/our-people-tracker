@@ -20,11 +20,11 @@
 
 {{#if roles.length}}
 <section>
-    <h2>All Employees</h2>
+    <h2>All Roles</h2>
     <ol>
         {{#each roles as |role|}}
         <li>
-            {{> role-info role}}
+            {{ role.title }}
             <a href="/homepage/edit/{{role.id}}" class="edit-link">Edit role</a>
         </li>
         {{/each}}
@@ -32,4 +32,4 @@
 </section>
 {{/if}}
 
-<script src="/public/javascript/add-role.js"></script>
+<script src="/public/javascript/roles.js"></script>

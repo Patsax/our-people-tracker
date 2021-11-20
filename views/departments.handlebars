@@ -10,13 +10,13 @@
     </form>
 </section>
 
-{{#if departments.length}}
+{{#if depts.length}}
 <section>
     <h2>All Departments</h2>
     <ol>
-        {{#each departments as |department|}}
+        {{#each depts as |department|}}
         <li>
-            {{> department-info department}}
+            {{ department.department_name }}
             <a href="/homepage/edit/{{department.id}}" class="">Edit department</a>
         </li>
         {{/each}}
@@ -24,4 +24,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-department.js"></script>
+<script src="/javascript/departments.js"></script>

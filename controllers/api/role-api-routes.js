@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Employee } = require("../../models");
+const { Role } = require('../../models');
 
 router.get('/', (req, res) => {
 
-    Employee.findAll({})
-    .then(dbEmployee => res.json(dbEmployee))
+    Role.findAll({})
+    .then(dbRoles => res.json(dbRoles))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -13,17 +13,17 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
 
-    Employee.findOne({
+    Role.findOne({
         where: {
             id: req.params.id
         }
     })
-    .then(dbEmployee => {
-        if (!dbEmployee) {
+    .then(dbRoles => {
+        if (!dbRoles) {
             res.status(404).json({ message: 'No role with that id' });
             return;
         }
-        res.json(dbEmployee);
+        res.json(dbRoles);
     })
     .catch((err) => {
         console.log(err);
@@ -32,31 +32,30 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-
-    Employee.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        role_id: req.body.role_id
+    Role.create({
+        title: req.body.title,
+        salary: req.body.salary,
+        deparment_id: req.body.deparment_id
     })
-    .then(dbEmployee => res.json(dbEmployee))
+    .then(dbRoles => res.json(dbRoles))
     .catch(err => {
         console.log(err);
-        res.status(400).json(err);
+        res.status(500).json(err);
     });
 });
 
 router.delete('/:id', (req, res) => {
-    Employee.destroy({
+    Role.destroy({
         where: {
             id: req.params.id
         }
     })
-    .then(dbEmployee => {
-        if (!dbEmployee) {
-            res.status(404).json({ message: 'No employee with that id' });
+    .then(dbRoles => {
+        if (!dbRoles) {
+            res.status(404).json({ message: 'No role with this id' });
             return;
         }
-        res.json(dbEmployee)
+        res.json(dbRoles);
     })
     .catch((err) => {
         console.log(err);
