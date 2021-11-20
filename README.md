@@ -1,10 +1,11 @@
+  # Our People Tracker
   ---
     ## Table of Contents
 
    1. [Description](#description)
    2. [Usage](#usage)
    3. [License](#license)
-   4. [Contribute](#contribute)
+   4. [Contributes](#contributes)
    5. [Further questions](#questions)
     ---
 
@@ -12,7 +13,7 @@
    ## Description
 
 
-   #User Story
+   # User Story
     
    AS A business owner 
    I WANT to be able to securely view and manage the departments, roles, and employees in my company 
@@ -49,7 +50,7 @@
     
    ---
    
-   ## Contribute
+   ## Contributers
    
 
  
