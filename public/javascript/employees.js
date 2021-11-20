@@ -1,4 +1,4 @@
-async function employeeBtnHandler() {
+async function employeeBtnHandler(event) {
     event.preventDefault();
     window.location.assign('/employees')
     // const response = await fetch('/api/employee', {

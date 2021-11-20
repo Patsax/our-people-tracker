@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/department', (req, res) => {
-    console.log('====================')
-    console.log( 'hello' )
     Department.findAll({
         attributes: [
             'id',

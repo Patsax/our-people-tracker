@@ -1,4 +1,4 @@
-async function roleBtnHandler() {
+async function roleBtnHandler(event) {
     event.preventDefault();
     window.location.assign('/roles')
     // const response = await fetch('/api/role', {
