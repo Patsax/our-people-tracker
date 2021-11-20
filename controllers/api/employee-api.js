@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-
     Employee.findOne({
         where: {
             id: req.params.id
@@ -25,10 +24,6 @@ router.get('/:id', (req, res) => {
         }
         res.json(dbEmployee);
     })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
 });
 
 router.post('/', (req, res) => {
