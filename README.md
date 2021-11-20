@@ -7,20 +7,20 @@
    3. [License](#license)
    4. [Contributes](#contributes)
    5. [Further questions](#questions)
-    ---
+  
 
    ---
    ## Description
 
 
-   # User Story
+   ### User Story
     
    AS A business owner 
    I WANT to be able to securely view and manage the departments, roles, and employees in my company 
    SO THAT I can organize employee files for my business
 
   
-   ---
+   
 
 
    ---
@@ -46,7 +46,7 @@
    WHEN I choose to update an employee role
    THEN I am prompted to select an employee to update and their new role and this information is updated in the database
    
-  ---
+ 
     
    ---
    
@@ -56,7 +56,7 @@
  
    Patsax, Banksandrew16, Tcyang, Dghooley
   
-   ---
+  
 
    ---
    ## Further Questions?
@@ -66,3 +66,4 @@
    or
 
    Send me an email: Patasax22@yahoo.com
+   ---
