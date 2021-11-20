@@ -1,6 +1,6 @@
   # Our People Tracker
   ---
-    ## Table of Contents
+   ## Table of Contents
 
    1. [Description](#description)
    2. [Usage](#usage)
